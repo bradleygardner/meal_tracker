@@ -5,8 +5,7 @@ const doc = {
     title: 'Meal Tracker API',
     description: 'API documentation for the meal tracker'
   },
-  //host: 'cse341-l01-8bx5.onrender.com'
-  host: 'localhost:3000'
+  host: 'meal-tracker-bros.onrender.com'
 };
 
 const outputFile = './swagger.json';

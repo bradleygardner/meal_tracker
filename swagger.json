@@ -5,12 +5,22 @@
     "description": "API documentation for the meal tracker",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "meal-tracker-bros.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
   ],
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/recipe/": {
       "get": {
         "description": "",
