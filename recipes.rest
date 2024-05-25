@@ -1,0 +1,70 @@
+GET http://localhost:3000/recipe
+###
+GET http://localhost:3000/recipe/6652163d837140a757175035 
+###
+GET http://localhost:3000/recipe/6634fe9719b1813c43b3f959 
+###
+GET http://localhost:3000/recipe/6634fec619b1813c43b3f95a
+###
+POST http://localhost:3000/recipe/
+content-type: application/json
+
+{
+    "name": "Pizza",
+    "servingSize": "8",
+    "totalTime": "1 hr",
+    "prepTime": "30 min",
+    "cookTime": "30 min",
+    "ingredients": "dough, pizze sauce, pepperoni and cheese.",
+    "instructions": "Make it hour you like"
+}
+###
+PUT http://localhost:3000/recipe/66524accef7a1850dfb9907c
+content-type: application/json
+
+{
+    "name": "Pizza",
+    "servingSize": "9",
+    "totalTime": "1 hr",
+    "prepTime": "30 min",
+    "cookTime": "30 min",
+    "ingredients": "dough, pizze sauce, pepperoni, ham and cheese.",
+    "instructions": "Make it hour you like"
+}
+###
+DELETE  http://localhost:3000/recipe/66524accef7a1850dfb9907c
+
+
+### render requests
+GET https://cse341-l01-8bx5.onrender.com/recipe
+###
+GET https://cse341-l01-8bx5.onrender.com/recipe/6634fe1319b1813c43b3f958 
+###
+GET https://cse341-l01-8bx5.onrender.com/recipe/6634fe9719b1813c43b3f959 
+###
+GET https://cse341-l01-8bx5.onrender.com/recipe/6634fec619b1813c43b3f95a 
+
+###
+POST https://cse341-l01-8bx5.onrender.com/recipe/
+content-type: application/json
+
+{
+    "firstName": "James",
+    "lastName": "Jacobson",
+    "email": "imcool@email.com",
+    "favoriteColor": "blue",
+    "birthday": "November 2, 2002"
+}
+###
+PUT https://cse341-l01-8bx5.onrender.com/recipe/663eeec55908891a038eb8b3
+content-type: application/json
+
+{
+    "firstName": "Matthew",
+    "lastName": "Jacobson",
+    "email": "imstillcool@email.com",
+    "favoriteColor": "purple",
+    "birthday": "march 3, 2002"
+}
+###
+DELETE  https://cse341-l01-8bx5.onrender.com/recipe/6651fbd65583d70d6cf9ba71
