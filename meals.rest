@@ -28,35 +28,26 @@ DELETE  http://localhost:3000/meals/663e906d005ba026e26ed524
 
 
 ### render requests
-GET https://cse341-l01-8bx5.onrender.com/meals
+GET https://meal-tracker-bros.onrender.com/meals
 ###
-GET https://cse341-l01-8bx5.onrender.com/meals/6634fe1319b1813c43b3f958 
+GET https://meal-tracker-bros.onrender.com/meals/6652163d837140a757175035 
 ###
-GET https://cse341-l01-8bx5.onrender.com/meals/6634fe9719b1813c43b3f959 
-###
-GET https://cse341-l01-8bx5.onrender.com/meals/6634fec619b1813c43b3f95a 
-
-###
-POST https://cse341-l01-8bx5.onrender.com/meals/
+POST https://meal-tracker-bros.onrender.com/meals/
 content-type: application/json
 
 {
-    "firstName": "James",
-    "lastName": "Jacobson",
-    "email": "imcool@email.com",
-    "favoriteColor": "blue",
-    "birthday": "November 2, 2002"
+    "name": "Pasta",
+    "recipeId": "None",
+    "rating": "5"
 }
 ###
-PUT https://cse341-l01-8bx5.onrender.com/meals/663eeec55908891a038eb8b3
+PUT https://meal-tracker-bros.onrender.com/meals/663eeec55908891a038eb8b3
 content-type: application/json
 
 {
-    "firstName": "Matthew",
-    "lastName": "Jacobson",
-    "email": "imstillcool@email.com",
-    "favoriteColor": "purple",
-    "birthday": "march 3, 2002"
+    "name": "Pasta",
+    "recipeId": "None",
+    "rating": "3"
 }
 ###
-DELETE  https://cse341-l01-8bx5.onrender.com/meals/6651fbd65583d70d6cf9ba71
+DELETE  https://meal-tracker-bros.onrender.com/meals/6651fbd65583d70d6cf9ba71
