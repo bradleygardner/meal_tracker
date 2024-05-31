@@ -16,7 +16,7 @@ content-type: application/json
     "prepTime": "30 min",
     "cookTime": "30 min",
     "ingredients": "dough, pizze sauce, pepperoni and cheese.",
-    "instructions": "Make it hour you like"
+    "instructions": "Make it how you like"
 }
 ###
 PUT http://localhost:3000/recipe/66524accef7a1850dfb9907c
@@ -29,7 +29,7 @@ content-type: application/json
     "prepTime": "30 min",
     "cookTime": "30 min",
     "ingredients": "dough, pizze sauce, pepperoni, ham and cheese.",
-    "instructions": "Make it hour you like"
+    "instructions": "Make it how you like"
 }
 ###
 DELETE  http://localhost:3000/recipe/66524accef7a1850dfb9907c
@@ -55,7 +55,7 @@ content-type: application/json
     "prepTime": "30 min",
     "cookTime": "30 min",
     "ingredients": "dough, pizze sauce, pepperoni, ham and cheese.",
-    "instructions": "Make it hour you like"
+    "instructions": "Make it how you like"
 }
 ###
 PUT https://meal-tracker-bros.onrender.com/recipe/663eeec55908891a038eb8b3
@@ -68,7 +68,7 @@ content-type: application/json
     "prepTime": "30 min",
     "cookTime": "30 min",
     "ingredients": "dough, pizze sauce, pepperoni, ham and cheese.",
-    "instructions": "Make it hour you like"
+    "instructions": "Make it how you like"
 }
 ###
 DELETE  https://meal-tracker-bros.onrender.com/recipe/6651fbd65583d70d6cf9ba71
