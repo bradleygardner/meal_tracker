@@ -5,7 +5,7 @@ const { saveMeal } = require('../middleware/validator');
 routes.get('/', meals.getAllRoute);
 routes.get('/:id', meals.getByIdRoute);
 routes.post('/', saveMeal, meals.postMealRoute);
-routes.put('/:id',saveMeal, meals.putUpdateMealRoute);
+routes.put('/:id', saveMeal, meals.putUpdateMealRoute);
 routes.delete('/:id', meals.deleteMealRoute);
 
 module.exports = routes;
