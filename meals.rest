@@ -10,7 +10,7 @@ POST http://localhost:3000/meals/
 content-type: application/json
 
 {
-    "name": "Pizza",
+    "name": "hot dogs",
     "recipeId": "None",
     "rating": "5"
 }
@@ -24,7 +24,7 @@ content-type: application/json
     "rating": "3"
 }
 ###
-DELETE  http://localhost:3000/meals/663e906d005ba026e26ed524
+DELETE  http://localhost:3000/meals/666b54ba4523198b22e80235
 
 
 ### render requests

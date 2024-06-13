@@ -12,8 +12,8 @@ routes.get('/google',
 
 routes.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: '/protected',
-        failureRedirect: '/failure',
+        successRedirect: '/auth/protected',
+        failureRedirect: '/auth/failure',
     })
 );
 
