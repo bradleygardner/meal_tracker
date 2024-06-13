@@ -1,6 +1,6 @@
 GET http://localhost:3000/recipe
 ###
-GET http://localhost:3000/recipe/6652163d837140a757175035 
+GET http://localhost:3000/recipe/666b59d6ccbc06f56ceae69a 
 ###
 GET http://localhost:3000/recipe/6634fe9719b1813c43b3f959 
 ###
@@ -19,7 +19,7 @@ content-type: application/json
     "instructions": "Make it how you like"
 }
 ###
-PUT http://localhost:3000/recipe/66524accef7a1850dfb9907c
+PUT http://localhost:3000/recipe/666b59d6ccbc06f56ceae69a
 content-type: application/json
 
 {
@@ -32,7 +32,7 @@ content-type: application/json
     "instructions": "Make it how you like"
 }
 ###
-DELETE  http://localhost:3000/recipe/66524accef7a1850dfb9907c
+DELETE  http://localhost:3000/recipe/666b59d6ccbc06f56ceae69a
 
 
 ### render requests

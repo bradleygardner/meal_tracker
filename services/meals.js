@@ -1,29 +1,39 @@
-const mongodb = require('../db/db');
+const mongoose = require('mongoose');
+const mealSchema = require('../models/meal');
 const ObjectId = require('mongodb').ObjectId;
 
 async function allMeals() {
-    const result = await mongodb.getDb().db().collection('meals').find().toArray();
+    const result = await mealSchema.find();
     return result;
 }
 async function meals(id) {
     id = new ObjectId(id);
-    const result = await mongodb.getDb().db().collection('meals').find({ _id: id }).toArray();
+    const result = await mealSchema.findById(id)
     return result;
 }
-async function addMeal(contact) {
-    //Add contact to db
-    const result = await mongodb.getDb().db().collection('meals').insertOne(contact);
+async function addMeal(meal) {
+    //Add meal to db
+    const result = await mealSchema.create({
+        name: meal.name,
+        recipeId: meal.recipeId,
+        rating: meal.rating,
+    });
     return result;
 }
-async function editMeal(contact, id) {
-    //Update contact
+async function editMeal(meal, id) {
+    //Update meal
     id = new ObjectId(id);
-    const result = await mongodb.getDb().db().collection('meals').replaceOne({ _id: id }, contact);
+    const item = await mealSchema.findById(id)
+    item.name = meal.name;
+    item.recipeId = meal.recipeId;
+    item.rating = meal.rating;
+
+    const result = await item.save();
     return result;
 }
 async function deleteMeal(id) {
     id = new ObjectId(id);
-    const result = await mongodb.getDb().db().collection('meals').deleteOne({ _id: id });
+    const result = await mealSchema.deleteOne(id)
     return result;
 }
 module.exports = {
