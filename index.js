@@ -11,6 +11,7 @@ const passport = require('passport');
 const app = express();
 
 app
+    .use(express.static('public'))
     .use(bodyParser.json())
     .use(session({secret : process.env.SESSION_SECRET}))
     .use(passport.initialize())
