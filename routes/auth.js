@@ -12,7 +12,7 @@ routes.get('/google',
 
 routes.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: '/pages/recipes.html',
+        successRedirect: '/recipes',
         failureRedirect: '/auth/failure',
     })
 );
@@ -20,7 +20,7 @@ routes.get('/google/callback',
 routes.get('/logout', (req, res) => {
     req.logOut();
     req.session.destroy();
-    res.send('GoodBye');
+    res.redirect('/home');
 })
 routes.get('/failure', (req, res) => {
     res.send('Bye')

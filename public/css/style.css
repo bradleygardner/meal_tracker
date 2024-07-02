@@ -1,0 +1,67 @@
+:root {
+    --color_primary: #28536B;
+    --color_secondary: #7EA8BE;
+    --color_text: #F6F0ED;
+    --color_buttons: #BBB193;
+    --color_accent: #C2948A;
+}
+
+h1 h2 p {
+    color: var(--color_text);
+}
+
+button,
+a {
+    text-decoration: none;
+    background-color: var(--color_buttons);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+header{
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--color_accent);
+}
+
+footer{
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--color_accent);
+}
+
+/* Add css here... */
+.btn {
+    display:block;
+    border-radius: 10px;
+    margin:auto;
+    padding: 0.5em 2em;
+    text-align: center;
+    font-size: 24px;
+}
+.cc{
+    display:flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+.titlebar{
+    display: flex;
+}
+.navBar{
+    display: flex;
+}
+
+body{
+    background-color: var(--color_primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    flex: 1;
+}

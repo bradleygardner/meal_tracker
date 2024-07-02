@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const mealSchema = require('../models/meal');
 const ObjectId = require('mongodb').ObjectId;
 
-async function allMeals() {
-    const result = await mealSchema.find();
+async function allMeals(userId) {
+    const result = await mealSchema.find({userId});
     return result;
 }
 async function meals(id) {
@@ -14,6 +14,7 @@ async function meals(id) {
 async function addMeal(meal) {
     //Add meal to db
     const result = await mealSchema.create({
+        userId: meal.userId,
         name: meal.name,
         recipeId: meal.recipeId,
         rating: meal.rating,

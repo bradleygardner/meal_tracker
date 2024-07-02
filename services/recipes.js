@@ -14,6 +14,7 @@ async function recipe(id) {
 }
 async function addRecipe(recipe) {
     const result = await recipeSchema.create({
+        userId: recipe.userId,
         name: recipe.name,
         servingSize: recipe.servingSize,
         totalTime: recipe.totalTime,
