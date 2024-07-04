@@ -3,7 +3,7 @@ const { isLoggedIn } = require('../middleware/auth.js');
 const routes = require('express').Router();
 
 routes.get('/', (req, res) => {
-    res.send('<a href="/auth/google">Login with Google</a>')
+    res.sendFile('../views/index.html')
 });
 
 routes.get('/google',
@@ -12,7 +12,7 @@ routes.get('/google',
 
 routes.get('/google/callback',
     passport.authenticate('google', {
-        successRedirect: '/auth/protected',
+        successRedirect: '/recipes',
         failureRedirect: '/auth/failure',
     })
 );
@@ -20,13 +20,13 @@ routes.get('/google/callback',
 routes.get('/logout', (req, res) => {
     req.logOut();
     req.session.destroy();
-    res.send('GoodBye');
+    res.redirect('/home');
 })
 routes.get('/failure', (req, res) => {
     res.send('Bye')
 });
 
 routes.get('/protected', isLoggedIn, (req, res) => {
-    res.send('Hello')
+    res.successRedirect('/pages/recipes.html')
 });
 module.exports = routes;

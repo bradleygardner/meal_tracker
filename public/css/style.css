@@ -1,0 +1,119 @@
+:root {
+    --color_primary: #28536B;
+    --color_secondary: #7EA8BE;
+    --color_text: #F6F0ED;
+    --color_buttons: #BBB193;
+    --color_accent: #C2948A;
+}
+
+h1 h2 p {
+    color: var(--color_text);
+}
+
+a {
+    text-decoration: none;
+    background-color: var(--color_buttons);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--color_accent);
+}
+
+footer {
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--color_accent);
+}
+
+/* Add css here... */
+a,
+a:active,
+a:visited {
+    color: black
+}
+
+.btn {
+    display: block;
+    border-radius: 10px;
+    margin: auto;
+    padding: 0.5em 2em;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: none;
+    background-color: var(--color_buttons);
+}
+
+.delete {
+    color: red;
+    border-radius: 4px;
+    background-color: var(--color_buttons);
+}
+
+.cc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titlebar {
+    display: flex;
+}
+
+.navBar {
+    display: flex;
+}
+
+form {
+    width: 600px;
+    margin: auto;
+    background: var(--color_secondary);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.item {
+    list-style: none;
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--color_secondary);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body {
+    background-color: var(--color_primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    flex: 1;
+}

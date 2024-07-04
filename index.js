@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const mongodb = require('./db/db')
 const dotenv = require('dotenv')
 const bodyParser = require('body-parser');
+const path = require('path')
 dotenv.config();
 
 require('./services/auth');
@@ -11,8 +12,9 @@ const passport = require('passport');
 const app = express();
 
 app
+    .use(express.static('public'))
     .use(bodyParser.json())
-    .use(session({secret : process.env.SESSION_SECRET}))
+    .use(session({ secret: process.env.SESSION_SECRET }))
     .use(passport.initialize())
     .use(passport.session())
     .use((req, res, next) => {

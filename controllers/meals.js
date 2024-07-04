@@ -1,7 +1,7 @@
 const meals = require('../services/meals.js');
 const getAllRoute = async (req, res) => {
     try {
-        await meals.allMeals().then((lists) => {
+        await meals.allMeals(req.user._id).then((lists) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(lists);
         });
@@ -26,6 +26,7 @@ const postMealRoute = async (req, res) => {
     try {
         var today = new Date().toISOString().substring(0, 10);
         const meal = {
+            userId: req.user._id,
             name: req.body.name,
             date: today,
             recipeId: req.body.recipeId,

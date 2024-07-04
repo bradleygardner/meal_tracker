@@ -26,6 +26,7 @@ const postRecipeRoute = async (req, res) => {
     try {
         var today = new Date().toISOString().substring(0, 10);
         const recipe = {
+            userId: req.user._id,
             name: req.body.name,
             date: today,
             servingSize: req.body.servingSize,
