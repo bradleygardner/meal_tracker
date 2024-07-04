@@ -16,7 +16,7 @@ export function getParam(param) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     return urlParams.get(param);
-  }
+}
 
 export function loadTemplate(path) {
     return async function () {
@@ -77,7 +77,7 @@ export async function save(payload, route) {
     return data;
 }
 
-export async function edit (payload, route) {
+export async function put(payload, route) {
     const url = route;
     const options = {
         method: "PUT",
@@ -100,11 +100,24 @@ export async function get(route) {
     return data;
 }
 
+export async function deleteItem (route) {
+    const url = route;
+    const options = {
+        method: "delete",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+
+    const response = await fetch(url, options);
+    return response;
+}
+
 async function convertToJson(res) {
     const jsonResponse = await res.json();
     if (res.ok) {
-      return jsonResponse;
+        return jsonResponse;
     } else {
-      throw { name: "servicesError", message: jsonResponse };
+        throw { name: "servicesError", message: jsonResponse };
     }
-  }
+}

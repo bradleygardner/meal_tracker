@@ -1,8 +1,6 @@
 const routes = require('express').Router();
-const recipes = require('../controllers/recipes.js');
 const path = require('path')
-const { isLoggedIn } = require('../middleware/auth.js');
-const { saveRecipe } = require('../middleware/validator.js');
+const { isLoggedInRedirect } = require('../middleware/auth.js');
 
 //swagger
 const swaggerUi = require('swagger-ui-express');
@@ -14,16 +12,16 @@ routes.get('/api-docs', swaggerUi.setup(swaggerDocument));
 routes.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages/index.html'))
 });
-routes.get('/recipes/recipe', isLoggedIn, (req, res) => {
+routes.get('/recipes/recipe', isLoggedInRedirect, (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages/recipe.html'))
 });
-routes.get('/recipes', isLoggedIn, (req, res) => {
+routes.get('/recipes', isLoggedInRedirect, (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages/recipeList.html'))
 });
-routes.get('/meals/meal', isLoggedIn, (req, res) => {
+routes.get('/meals/meal', isLoggedInRedirect, (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages/meal.html'))
 });
-routes.get('/meals', isLoggedIn, (req, res) => {
+routes.get('/meals', isLoggedInRedirect, (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages/mealList.html'))});
 
 module.exports = routes;

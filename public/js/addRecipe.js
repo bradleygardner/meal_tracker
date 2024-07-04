@@ -1,6 +1,6 @@
-import { loadHeaderFooter, save, edit, get, getParam } from "./utils.js";
+import { loadHeaderFooter, save, put, get, getParam } from "./utils.js";
 
-//let edit = false;
+let edit = false;
 
 loadHeaderFooter(true, true);
 const param = getParam("id");
@@ -33,7 +33,7 @@ async function saveRecipe(form) {
     }
     try {
         if (edit){
-            const res = await edit(recipe, "/recipe");
+            const res = await put(recipe, "/recipe");
         }else{
             const res = await save(recipe, "/recipe");
         }
