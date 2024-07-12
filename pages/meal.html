@@ -4,16 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/addMeal.js" type="module"></script>
-    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/addMeal.js" type="module"></script>
+    <title>Add Meal</title>
 </head>
 
 <body>
     <Header id="main-header"></Header>
     <main>
         <h1>Add Meal</h1>
-        <div id="main-content"></div>
+        <div id="main-content">
+          <form name="meal">
+            <div class="form-group">
+                <label for="name">What did you have?:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="recipe">Recipe:</label>
+                <select id="recipe" name="recipe"></select>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating 1 - 5 star(s):</label>
+                <select id="rating" name="rating">
+                    <option value="1 star">1 star</option>
+                    <option value="2 stars">2 stars</option>
+                    <option value="3 stars">3 stars </option>
+                    <option value="4 stars">4 stars</option>
+                    <option value="5 stars">5 stars</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn" type="submit">Save</button>
+            </div>
+        </form>
+        </div>
       </main>
     <footer id="main-footer"></footer>
 </body>

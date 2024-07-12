@@ -9,6 +9,9 @@ routes.use('/api-docs', swaggerUi.serve);
 routes.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 //Other pages
+routes.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'pages/index.html'))
+});
 routes.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'pages/index.html'))
 });
