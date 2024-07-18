@@ -66,6 +66,12 @@ a:visited {
     display: flex;
 }
 
+.logout {
+    margin-left: auto;
+    max-height: 20px; 
+    padding: 5px;
+}
+
 .navBar {
     display: flex;
 }

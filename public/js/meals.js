@@ -5,6 +5,7 @@ await loadHeaderFooter(true, true);
 await loadMeals();
 
 let deleteBtn = document.querySelectorAll(".delete");
+let nameReverse = false;
 
 deleteBtn.forEach((btn) => {
     btn.addEventListener("click", deleteMeal);
@@ -18,6 +19,8 @@ async function loadMeals() {
     }
     const element = document.getElementById("main-table")
     renderListWithTemplate(mealsListTemplate, element, meals)
+    const sortNameButton = document.getElementById("sort_by_name");
+    sortNameButton.addEventListener("click", () => sortByName(meals, element));
 }
 
 export function mealsListTemplate(item) {
@@ -37,4 +40,19 @@ export async function deleteMeal(e) {
     // if (res.status == 200){
         
     // }
+}
+
+function sortByName(items, container) {
+    items.sort((a, b) => a.name.localeCompare(b.name));
+    const icon = document.getElementById("sort_name_icon");
+    icon.textContent = "";
+    if (nameReverse) {
+        items.reverse();
+        nameReverse = false;
+        icon.textContent = "↓";
+    } else {
+        nameReverse = true;
+        icon.textContent = "↑";
+    }
+    renderListWithTemplate(mealsListTemplate, container, items);
 }

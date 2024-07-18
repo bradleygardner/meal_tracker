@@ -44,6 +44,23 @@ async function deleteRecipe(id) {
     const result = await recipeSchema.deleteOne(id)    
     return result;
 }
+
+function sortByName(items, container) {
+    items.sort((a, b) => a.Name.localeCompare(b.Name));
+    const icon = qs("#sort_name_icon");
+    qs("#sort_price_icon").textContent = "";
+    if (nameReverse) {
+        items.reverse();
+        nameReverse = false;
+        icon.textContent = "↓";
+    } else {
+        nameReverse = true;
+        icon.textContent = "↑";
+    }
+    renderListWithTemplate(productCardTemplate, container, items);
+    modalSetup();
+}
+
 module.exports = {
     allRecipes,
     recipe,
